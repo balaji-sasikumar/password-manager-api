@@ -4,10 +4,11 @@ namespace PasswordManager.Service.Interface;
 
 public interface IPasswordManagerService
 {
-    Task<List<PasswordViewModel>> GetAllAsync();
-    Task<PasswordViewModel> GetByIdAsync(int id);
-    Task<PasswordViewModel> CreateAsync(PasswordViewModel password);
-    Task<bool> UpdateAsync(int id, PasswordViewModel password);
+    Task<List<EncryptedPasswordViewModel>> GetAllAsync();
+    Task<EncryptedPasswordViewModel> GetByIdAsync(int id);
+    Task<DecryptedPasswordViewModel> GetDecryptedPasswordByIdAsync(int id);
+    Task<EncryptedPasswordViewModel> CreateAsync(DecryptedPasswordViewModel password);
+    Task<bool> UpdateAsync(int id, DecryptedPasswordViewModel password);
     Task DeleteAsync(int id);
 
 }

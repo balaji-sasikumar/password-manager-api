@@ -9,7 +9,7 @@ public class AutoMapping : Profile
 {
     public AutoMapping()
     {
-        CreateMap<PasswordViewModel, Password>().ReverseMap();
+        CreateMap<EncryptedPasswordViewModel, Password>().ReverseMap();
     }
 
 }

@@ -1,8 +1,6 @@
-using System;
-
 namespace PasswordManager.Service.ViewModels;
 
-public class PasswordViewModel
+public class BasePasswordViewModel
 {
 
     public int Id { get; set; }
@@ -13,7 +11,15 @@ public class PasswordViewModel
 
     public string UserName { get; set; } = null!;
 
-    public string? EncryptedPassword { get; set; } = null!;
-    public string? DecryptedPassword { get; set; } = null!;
+}
 
+public class EncryptedPasswordViewModel : BasePasswordViewModel
+{
+    public string EncryptedPassword { get; set; } = null!;
+}
+
+
+public class DecryptedPasswordViewModel : BasePasswordViewModel
+{
+    public string DecryptedPassword { get; set; } = null!;
 }
