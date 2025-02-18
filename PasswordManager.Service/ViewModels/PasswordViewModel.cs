@@ -13,7 +13,7 @@ public class PasswordViewModel
 
     public string UserName { get; set; } = null!;
 
-    public string EncryptedPassword { get; set; } = null!;
-    public string DecryptedPassword { get; set; } = null!;
+    public string? EncryptedPassword { get; set; } = null!;
+    public string? DecryptedPassword { get; set; } = null!;
 
 }
