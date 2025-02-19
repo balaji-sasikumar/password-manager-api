@@ -1,0 +1,12 @@
+CREATE DATABASE PasswordManagerDB;
+GO
+USE PasswordManagerDB;
+GO
+CREATE TABLE Passwords (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Category NVARCHAR(50) NULL,
+    App NVARCHAR(100) NOT NULL,
+    UserName NVARCHAR(100) NOT NULL,
+    EncryptedPassword NVARCHAR(256) NOT NULL
+);
+GO
