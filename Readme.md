@@ -22,5 +22,16 @@ GO
 ## Scaffold-DbContext Command
 - inside PasswordManager.Repository
 ```bash
+cd PasswordManager.Repository
+
 dotnet ef dbcontext scaffold "Server=localhost;Database=PasswordManagerDB;User=SA;Password=PasswordManager@WPP;Encrypt=False" Microsoft.EntityFrameworkCore.SqlServer -o Models
 ```
+
+## Run the Application
+- inside PasswordManager.API
+```bash
+cd PasswordManager.API
+dotnet run
+```
+
+#### Note: Take the api url and use it in the PasswordManager.UI appsettings.json file
