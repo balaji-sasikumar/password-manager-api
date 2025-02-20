@@ -1,0 +1,31 @@
+version: "3.4"
+
+networks:
+  passwordmanager_network:
+    driver: bridge
+    name: passwordmanager_network
+
+services:
+  sqlserver:
+    container_name: passwordmanager_sqlserver
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+      - "1433:1433"
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "PasswordManager@WPP"
+    networks:
+      - passwordmanager_network
+  passwordmanagerapi:
+    image: passwordmanagerapi
+    build:
+      context: .
+      dockerfile: PasswordManager.API/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=PasswordManagerDB;User Id=SA;Password=PasswordManager@WPP;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;
+    depends_on:
+      - sqlserver
+    networks:
+      - passwordmanager_network

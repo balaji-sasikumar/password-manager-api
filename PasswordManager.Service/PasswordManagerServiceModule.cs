@@ -9,7 +9,6 @@ public class PasswordManagerServiceModule
 {
     public PasswordManagerServiceModule(IServiceCollection services)
     {
-        Console.WriteLine("PasswordManagerServiceModule.ctor");
         services.AddTransient<IPasswordManagerService, PasswordManagerService>();
     }
 }

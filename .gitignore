@@ -4,3 +4,5 @@ PasswordManager.Repository/obj/
 PasswordManager.Repository/bin/
 PasswordManager.Service/obj/
 PasswordManager.Service/bin/
+PasswordManager.UnitTest/bin/
+PasswordManager.UnitTest/obj/

@@ -9,7 +9,6 @@ public class PasswordManagerRepositoryModule
 {
     public PasswordManagerRepositoryModule(IServiceCollection services)
     {
-        Console.WriteLine("PasswordManagerRepositoryModule created.");
         services.AddTransient<IPasswordManagerRepository, PasswordManagerRepository>();
     }
 }

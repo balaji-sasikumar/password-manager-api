@@ -1,3 +1,8 @@
+## Docker command to run mssl
+```bash
+docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=PasswordManager@WPP' -p 1433:1433 --name mssql-server -d mcr.microsoft.com/mssql/server:2022-latest
+```
+
 ## Sql Query to Create DB and Table
 ```sql
 CREATE DATABASE PasswordManagerDB;
@@ -14,7 +19,7 @@ CREATE TABLE Passwords (
 GO
 ```
 
-### Scaffold-DbContext Command
+## Scaffold-DbContext Command
 - inside PasswordManager.Repository
 ```bash
 dotnet ef dbcontext scaffold "Server=localhost;Database=PasswordManagerDB;User=SA;Password=PasswordManager@WPP;Encrypt=False" Microsoft.EntityFrameworkCore.SqlServer -o Models
